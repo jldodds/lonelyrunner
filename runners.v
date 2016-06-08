@@ -20,4 +20,5 @@ Definition is_lonely (i : nat) (positions : list R) : Prop :=
 Definition the_conjecture :=
   forall (speeds : list nat) (runner : nat),
     (runner < length speeds)%nat ->
+    NoDup speeds ->
     exists (time : R), is_lonely runner (get_positions speeds time).
